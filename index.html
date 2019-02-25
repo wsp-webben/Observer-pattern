@@ -4,10 +4,50 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ES6 Boilerplate</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .observer {
+        max-width: 400px;
+      }
+      .observer__input {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .observer__captions-group {
+        
+        display: flex;
+      }
+
+      .observer__caption {
+        flex-grow: 1;
+        padding: 10px;
+        border-right: 1px solid #444;
+      }    
+    </style>
 </head>
 <body>
     <h1>Patterns: Observer</h1>
-    <div id="main"></div>
+    <main class="observer">
+        <input type="text" class="observer__input">
+        <div class="observer__captions-group">
+          <p class="observer__caption">
+              x + 404: 
+              <span class="observer__result observer__result--plus"></span>
+          </p>
+          <p class="observer__caption">
+              x * 2: 
+              <span class="observer__result observer__result--multiply"></span>
+          </p>
+          <p class="observer__caption">
+              x mod 42: 
+              <span class="observer__result observer__result--mod"></span>
+          </p>
+        </div>
+    </main>
 
     <script type="text/javascript" src="dist/bundle.js"></script>
 </body>
