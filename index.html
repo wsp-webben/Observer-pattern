@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ES6 Boilerplate</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+  <meta charset="utf-8">
+  <title>Observer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      .observer {
-        max-width: 400px;
-      }
-      .observer__input {
-        width: 100%;
-        padding: 10px;
-      }
+    .button {
+      margin-left: 10px;
+      min-width: 70px;
+      min-height: 30px;
+      padding: 10px;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-      .observer__captions-group {
+    .button:hover {
+      background-color: #333;
+      color: #fff;
+    }
 
-        display: flex;
-      }
+    .observer {
+      max-width: 400px;
+    }
 
-      .observer__caption {
-        flex-grow: 1;
-        padding: 10px;
-        border-right: 1px solid #444;
-      }
-    </style>
+    .observer__input-group {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .observer__input {
+      flex-grow: 1;
+      padding: 10px;
+    }
+
+    .subscriber {
+      display: flex;
+    }
+
+    .subscriber__data {
+      flex-grow: 1;
+      padding: 5px 10px;
+    }
+
+  </style>
 </head>
 <body>
-    <h1>Patterns: Observer</h1>
-    <main class="observer">
-        <input type="text" class="observer__input" placeholder="Input x:">
-        <div class="observer__captions-group">
-          <p class="observer__caption">
-              x + 404:
-              <span class="observer__result observer__result--plus"></span>
-          </p>
-          <p class="observer__caption">
-              x * 2:
-              <span class="observer__result observer__result--multiply"></span>
-          </p>
-          <p class="observer__caption">
-              x mod 42:
-              <span class="observer__result observer__result--mod"></span>
-          </p>
-        </div>
-    </main>
+  <h1>Patterns: Observer</h1>
+  <main class="observer">
+    <div class="observer__input-group">
+      <input type="text" class="observer__input" placeholder="Input message:">
+      <button class="observer__button button js-update">Update</button>
+    </div>
+    <div class="observer__subscribers js-subscribers">
+    </div>
+    <button class="observer__button button js-add">Add subscriber</button>
+  </main>
 
-    <script type="text/javascript" src="dist/bundle.js"></script>
+  <template id="subscriber">
+    <p class="subscriber js-sub">
+      <span class="subscriber__data js-data">New subscriber</span>
+      <button class="subscriber__button button js-remove">-</button>
+    </p>
+  </template>
+  <script type="text/javascript" src="dist/bundle.js"></script>
 </body>
 </html>
